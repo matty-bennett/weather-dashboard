@@ -33,15 +33,27 @@
         </div>
 
         <main class="col-12 col-lg-9 d-flex flex-column">
-
+            <!-- Current weather -->
             <div class="row">
                 <div class="card padding container-fluid">
                     <div class="card-body">
-                    <h2 id="city-name" class="card-title"></h2>
-                    <p>Temperature:</p>
-                    <p>Humidity:</p>
-                    <p>Wind Speed:</p>
-                    <p>UV Index:</p>
+                        <h2 id="city-name" class="card-title"></h2>
+                        <div class="d-flex">
+                            <p class="card-pad">Temperature:</p>
+                            <p id="current-temp"></p>
+                        </div>
+                        <div class="d-flex">
+                            <p class="card-pad">Humidity:</p>
+                            <p id="current-humid"></p>
+                        </div>
+                        <div class="d-flex">
+                            <p class="card-pad">Wind Speed:</p>
+                            <p id="current-wind"></p>
+                        </div>
+                        <div class="d-flex">
+                            <p class="card-pad">UV Index:</p>
+                            <p id="current-uv"></p>
+                        </div>
                     </div>
                 </div>
             </div>

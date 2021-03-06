@@ -5,3 +5,7 @@
 .card-pad {
     padding-right: 1rem;
 }
+
+.bg-orange {
+    background-color: rgb(255, 123, 0);
+}

@@ -12,10 +12,58 @@ $("#search-btn").click(function(event) {
 
     //getCurrentWeather();
     getForecast();
+    getCurrentWeather();
     // append searches to 
-
+    
 
 })
+
+let getCurrentWeather = () => {
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=' + input.value + '&appid=c515bb81c1f3200d80404db068a196ea&units=imperial')
+    .then(function(city) {
+        return city.json();
+    })
+    .then(function(data) {
+        // current weather info
+        let currentTempEl = $('#current-temp');
+        let currentTemp = data.main.temp;
+        currentTempEl.append(currentTemp + '°F');
+
+        let currentHumidEl = $('#current-humid');
+        let currentHumid = data.main.humidity;
+        currentHumidEl.append(currentHumid + '%');
+
+        let currentWindEl = $('#current-wind');
+        let currentWind = data.wind.speed;
+        currentWindEl.append(currentWind + 'mph');
+
+        let latitude = data.coord.lat;
+        let longitude = data.coord.lon;
+
+        return fetch('https://api.openweathermap.org/data/2.5/uvi?lat=' + latitude + '&lon=' + longitude + '&appid=c515bb81c1f3200d80404db068a196ea');
+        
+    })
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        let currentUVEl = $('#current-uv');
+        let currentUV = data.value;
+        currentUVEl.append(currentUV);
+
+        if (data.value >= 8) {
+            currentUVEl.addClass('badge badge-danger');
+        } else if (data.value >= 6 && data.value < 8) {
+            currentUVEl.addClass('badge bg-orange');
+        } else if (data.value >= 3 && data.value < 6) {
+            currentUVEl.addClass('badge badge-warning');
+        } else if (data.value < 3) {
+            currentUVEl.addClass('badge badge-success');
+        }
+    });
+    
+    
+};
 
 let getForecast = () => {
     fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + input.value + '&appid=c515bb81c1f3200d80404db068a196ea&units=imperial')
