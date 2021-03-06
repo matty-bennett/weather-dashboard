@@ -14,20 +14,135 @@
         <h1 class="text-center">Weather Dashboard</h1>
     </header>
 
-    <div class="col-12 min-vh-100 col-lg-3 d-flex flex-column p-4 p-lg-3 bg-light">
-        <h4>Search for a City:</h3>
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="City Name" aria-label="City" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-              <button class="btn btn-outline-primary" type="button"><span class="oi oi-magnifying-glass"></span></button>
+    <div class="row min-vh-100">
+        <div class="col-12 col-lg-3 d-flex flex-column p-4 p-lg-3 bg-light">
+            <h4>Search for a City:</h3>
+            <div class="input-group mb-3">
+                <input id="searchInput" type="text" class="form-control" placeholder="City Name" aria-label="City" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                <button id="search-btn" class="btn btn-outline-primary" type="button"><span class="oi oi-magnifying-glass"></span></button>
+                </div>
             </div>
-          </div>
+            <div class="card">
+                <ul id="search-list" class="list-group list-group-flush">
+                <li class="list-group-item">Cras justo odio</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
+            </div>
+        </div>
+
+        <main class="col-12 col-lg-9 d-flex flex-column">
+
+            <div class="row">
+                <div class="card padding container-fluid">
+                    <div class="card-body">
+                    <h2 id="city-name" class="card-title"></h2>
+                    <p>Temperature:</p>
+                    <p>Humidity:</p>
+                    <p>Wind Speed:</p>
+                    <p>UV Index:</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <h2 class="padding">5-Day Forecast:</h2>
+            </div>
+            <div class="m-5 row justify-content-around">
+                <!-- day 1 card -->
+                <div class="card text-white bg-primary mb-3" style="min-width: 11rem;">
+                    <div class="card-body">
+                            <h5 class="card-title">Date</h5> <!-- moment.js? -->
+                        <div>
+                            <img id="day-one-icon">
+                        </div>
+                        <div class="d-flex">
+                            <p class="card-text card-pad">Temp: </p>
+                            <p id="day-one-temp"></p>
+                        </div>
+                        <div class="d-flex">
+                            <p class="card-text card-pad">Humidity:</p>
+                            <p id="day-one-humid"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- day 2 card -->
+                <div class="card text-white bg-primary mb-3" style="min-width: 11rem;">
+                    <div class="card-body">
+                            <h5 class="card-title">Date</h5> <!-- moment.js? -->
+                        <div>
+                            <img id="day-two-icon">
+                        </div>
+                        <div class="d-flex">
+                            <p class="card-text card-pad">Temp: </p>
+                            <p id="day-two-temp"></p>
+                        </div>
+                        <div class="d-flex">
+                            <p class="card-text card-pad">Humidity:</p>
+                            <p id="day-two-humid"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- day 3 card -->
+                <div class="card text-white bg-primary mb-3" style="min-width: 11rem;">
+                    <div class="card-body">
+                            <h5 class="card-title">Date</h5> <!-- moment.js? -->
+                        <div>
+                            <img id="day-three-icon">
+                        </div>
+                        <div class="d-flex">
+                            <p class="card-text card-pad">Temp: </p>
+                            <p id="day-three-temp"></p>
+                        </div>
+                        <div class="d-flex">
+                            <p class="card-text card-pad">Humidity:</p>
+                            <p id="day-three-humid"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- day 4 card -->
+                <div class="card text-white bg-primary mb-3" style="min-width: 11rem;">
+                    <div class="card-body">
+                            <h5 class="card-title">Date</h5> <!-- moment.js? -->
+                        <div>
+                            <img id="day-four-icon">
+                        </div>
+                        <div class="d-flex">
+                            <p class="card-text card-pad">Temp: </p>
+                            <p id="day-four-temp"></p>
+                        </div>
+                        <div class="d-flex">
+                            <p class="card-text card-pad">Humidity:</p>
+                            <p id="day-four-humid"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- day 5 card -->
+                <div class="card text-white bg-primary mb-3" style="min-width: 11rem;">
+                    <div class="card-body">
+                            <h5 class="card-title">Date</h5> <!-- moment.js? -->
+                        <div>
+                            <img id="day-five-icon">
+                        </div>
+                        <div class="d-flex">
+                            <p class="card-text card-pad">Temp: </p>
+                            <p id="day-five-temp"></p>
+                        </div>
+                        <div class="d-flex">
+                            <p class="card-text card-pad">Humidity:</p>
+                            <p id="day-five-humid"></p>
+                        </div>
+                    </div>
+                </div>
+        </main>
     </div>
 
-    <main class="col-12 col-lg-9 d-flex flex-column">
-
-    </main>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="assets/main.js"></script>
 </body>
 </html>
