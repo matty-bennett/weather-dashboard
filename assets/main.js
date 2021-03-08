@@ -1,9 +1,23 @@
 let cityName = document.querySelector("#city-name");
 let input = document.querySelector("#searchInput");
 let city = input.value
-let searchArr = [];
+let searchHistory = [];
 
 // function to save recently searched cities to the search history list
+let searchedCities = () => {
+    let listItem = document.createElement("li");
+    listItem.textContent = input.value;
+    searchHistory.push(listItem.textContent);
+    listItem.className = 'search-item';
+
+    let listBtn = document.createElement("button");
+    listBtn.className = 'list-group-item';
+
+    listBtn.appendChild(listItem);
+
+    let searchListEl = document.querySelector("#search-list");
+    searchListEl.appendChild(listBtn);
+}
 
 // when search button is clicked, input is stored in search history array and input fetches weather information from api
 $("#search-btn").click(function(event) {
@@ -13,8 +27,10 @@ $("#search-btn").click(function(event) {
     //getCurrentWeather();
     getForecast();
     getCurrentWeather();
+    searchedCities();
     // append searches to 
 
+    input.value = "";
 
 })
 
@@ -28,8 +44,6 @@ let getCurrentWeather = () => {
         let currentDateEl = $('#current-date');
         let currentDate = moment().format('MM/DD/YYYY');
         currentDateEl.append(currentDate);
-
-        
     
         let currentTempEl = $('#current-temp');
         let currentTemp = data.main.temp;
