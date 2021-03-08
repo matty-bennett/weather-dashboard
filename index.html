@@ -25,9 +25,14 @@
             </div>
             <div class="card">
                 <ul id="search-list" class="list-group list-group-flush">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Vestibulum at eros</li>
+                <li class="list-group-item">Herriman</li>
+                <li class="list-group-item">Draper</li>
+                <li class="list-group-item">Riverton</li>
+                <li class="list-group-item">New York</li>
+                <li class="list-group-item">Chicago</li>
+                <li class="list-group-item">San Diego</li>
+                <li class="list-group-item">Denver</li>
+                <li class="list-group-item">Salt Lake City</li>
                 </ul>
             </div>
         </div>
@@ -37,7 +42,11 @@
             <div class="row">
                 <div class="card padding container-fluid">
                     <div class="card-body">
-                        <h2 id="city-name" class="card-title"></h2>
+                        <div class="d-flex">
+                            <h2 id="city-name" class="card-title card-pad"></h2>
+                            <h2 id="current-date"></h2>
+                            <img id="current-icon">
+                        </div>
                         <div class="d-flex">
                             <p class="card-pad">Temperature:</p>
                             <p id="current-temp"></p>
@@ -65,7 +74,7 @@
                 <!-- day 1 card -->
                 <div class="card text-white bg-primary mb-3" style="min-width: 11rem;">
                     <div class="card-body">
-                            <h5 class="card-title">Date</h5> <!-- moment.js? -->
+                            <h5 id="date-one" class="card-title"></h5> <!-- moment.js? -->
                         <div>
                             <img id="day-one-icon">
                         </div>
@@ -83,7 +92,7 @@
                 <!-- day 2 card -->
                 <div class="card text-white bg-primary mb-3" style="min-width: 11rem;">
                     <div class="card-body">
-                            <h5 class="card-title">Date</h5> <!-- moment.js? -->
+                            <h5 id="date-two" class="card-title"></h5> <!-- moment.js? -->
                         <div>
                             <img id="day-two-icon">
                         </div>
@@ -101,7 +110,7 @@
                 <!-- day 3 card -->
                 <div class="card text-white bg-primary mb-3" style="min-width: 11rem;">
                     <div class="card-body">
-                            <h5 class="card-title">Date</h5> <!-- moment.js? -->
+                            <h5 id="date-three" class="card-title"></h5> <!-- moment.js? -->
                         <div>
                             <img id="day-three-icon">
                         </div>
@@ -119,7 +128,7 @@
                 <!-- day 4 card -->
                 <div class="card text-white bg-primary mb-3" style="min-width: 11rem;">
                     <div class="card-body">
-                            <h5 class="card-title">Date</h5> <!-- moment.js? -->
+                            <h5 id="date-four" class="card-title"></h5> <!-- moment.js? -->
                         <div>
                             <img id="day-four-icon">
                         </div>
@@ -137,7 +146,7 @@
                 <!-- day 5 card -->
                 <div class="card text-white bg-primary mb-3" style="min-width: 11rem;">
                     <div class="card-body">
-                            <h5 class="card-title">Date</h5> <!-- moment.js? -->
+                            <h5 id="date-five" class="card-title"></h5> <!-- moment.js? -->
                         <div>
                             <img id="day-five-icon">
                         </div>
@@ -155,6 +164,7 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <script src="assets/main.js"></script>
 </body>
 </html>
