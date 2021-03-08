@@ -28,7 +28,6 @@ $("#search-btn").click(function(event) {
     getForecast();
     getCurrentWeather();
     searchedCities();
-    // append searches to 
 
     input.value = "";
 
@@ -43,19 +42,19 @@ let getCurrentWeather = () => {
         // current weather info
         let currentDateEl = $('#current-date');
         let currentDate = moment().format('MM/DD/YYYY');
-        currentDateEl.append(currentDate);
+        currentDateEl.text(currentDate);
     
         let currentTempEl = $('#current-temp');
         let currentTemp = data.main.temp;
-        currentTempEl.append(currentTemp + '°F');
+        currentTempEl.text(currentTemp + '°F');
 
         let currentHumidEl = $('#current-humid');
         let currentHumid = data.main.humidity;
-        currentHumidEl.append(currentHumid + '%');
+        currentHumidEl.text(currentHumid + '%');
 
         let currentWindEl = $('#current-wind');
         let currentWind = data.wind.speed;
-        currentWindEl.append(currentWind + 'mph');
+        currentWindEl.text(currentWind + 'mph');
 
         let latitude = data.coord.lat;
         let longitude = data.coord.lon;
@@ -69,7 +68,7 @@ let getCurrentWeather = () => {
     .then(function(data) {
         let currentUVEl = $('#current-uv');
         let currentUV = data.value;
-        currentUVEl.append(currentUV);
+        currentUVEl.text(currentUV);
 
         if (data.value >= 8) {
             currentUVEl.addClass('badge badge-danger');
@@ -94,11 +93,11 @@ let getForecast = () => {
         // day one
         let dateOneEl = $('#date-one');
         let dateOne = moment().add(1, 'd').format('MM/DD/YYYY');
-        dateOneEl.append(dateOne);
+        dateOneEl.text(dateOne);
 
         let dayOneTempEl = $('#day-one-temp');
         let dayOneTemp = data.list[3].main.temp;
-        dayOneTempEl.append(Math.floor(dayOneTemp) + '°F');
+        dayOneTempEl.text(Math.floor(dayOneTemp) + '°F');
 
         let dayOneIconEl = $('#day-one-icon');
         dayOneIconEl.src = 'http://openweathermap.org/img/wn/' + data.list[3].weather[0].icon + '@2x.png';
@@ -107,16 +106,16 @@ let getForecast = () => {
 
         let dayOneHumidEl = $('#day-one-humid');
         let DayOneHumid = data.list[3].main.humidity;
-        dayOneHumidEl.append(DayOneHumid + '%');
+        dayOneHumidEl.text(DayOneHumid + '%');
 
         // day two
         let dateTwoEl = $('#date-two');
         let dateTwo = moment().add(2, 'd').format('MM/DD/YYYY');
-        dateTwoEl.append(dateTwo);
+        dateTwoEl.text(dateTwo);
 
         let dayTwoTempEl = $('#day-two-temp');
         let dayTwoTemp = data.list[11].main.temp;
-        dayTwoTempEl.append(Math.floor(dayTwoTemp) + '°F');
+        dayTwoTempEl.text(Math.floor(dayTwoTemp) + '°F');
 
         let dayTwoIconEl = $('#day-two-icon');
         let dayTwoIcon = data.list[11].weather[0].icon;
@@ -125,16 +124,16 @@ let getForecast = () => {
 
         let dayTwoHumidEl = $('#day-two-humid');
         let DayTwoHumid = data.list[11].main.humidity;
-        dayTwoHumidEl.append(DayTwoHumid + '%');
+        dayTwoHumidEl.text(DayTwoHumid + '%');
 
         // day three
         let dateThreeEl = $('#date-three');
         let dateThree = moment().add(3, 'd').format('MM/DD/YYYY');
-        dateThreeEl.append(dateThree);
+        dateThreeEl.text(dateThree);
 
         let dayThreeTempEl = $('#day-three-temp');
         let dayThreeTemp = data.list[19].main.temp;
-        dayThreeTempEl.append(Math.floor(dayThreeTemp) + '°F');
+        dayThreeTempEl.text(Math.floor(dayThreeTemp) + '°F');
 
         let dayThreeIconEl = $('#day-three-icon');
         let dayThreeIcon = data.list[19].weather[0].icon;
@@ -143,16 +142,16 @@ let getForecast = () => {
 
         let dayThreeHumidEl = $('#day-three-humid');
         let DayThreeHumid = data.list[19].main.humidity;
-        dayThreeHumidEl.append(DayThreeHumid + '%');
+        dayThreeHumidEl.text(DayThreeHumid + '%');
 
         // day 4
         let dateFourEl = $('#date-four');
         let dateFour = moment().add(4, 'd').format('MM/DD/YYYY');
-        dateFourEl.append(dateFour);
+        dateFourEl.text(dateFour);
 
         let dayFourTempEl = $('#day-four-temp');
         let dayFourTemp = data.list[27].main.temp;
-        dayFourTempEl.append(Math.floor(dayFourTemp) + '°F');
+        dayFourTempEl.text(Math.floor(dayFourTemp) + '°F');
 
         let dayFourIconEl = $('#day-four-icon');
         let dayFourIcon = data.list[27].weather[0].icon;
@@ -161,16 +160,16 @@ let getForecast = () => {
 
         let dayFourHumidEl = $('#day-four-humid');
         let DayFourHumid = data.list[27].main.humidity;
-        dayFourHumidEl.append(DayFourHumid + '%');
+        dayFourHumidEl.text(DayFourHumid + '%');
 
         // day 5
         let dateFiveEl = $('#date-five');
         let dateFive = moment().add(5, 'd').format('MM/DD/YYYY');
-        dateFiveEl.append(dateFive);
+        dateFiveEl.text(dateFive);
 
         let dayFiveTempEl = $('#day-five-temp');
         let dayFiveTemp = data.list[35].main.temp;
-        dayFiveTempEl.append(Math.floor(dayFiveTemp) + '°F');
+        dayFiveTempEl.text(Math.floor(dayFiveTemp) + '°F');
 
         let dayFiveIconEl = $('#day-five-icon');
         let dayFiveIcon = data.list[35].weather[0].icon;
@@ -179,7 +178,7 @@ let getForecast = () => {
 
         let dayFiveHumidEl = $('#day-five-humid');
         let DayFiveHumid = data.list[35].main.humidity;
-        dayFiveHumidEl.append(DayFiveHumid + '%');
+        dayFiveHumidEl.text(DayFiveHumid + '%');
     })
 }
  
